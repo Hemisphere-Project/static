@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>site template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/font.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    
+    
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    
+    <script src="js/GUI.js"></script>
+    <script src="js/main.js"></script>
+    
+  </head>
+  <body>
+			<script>
+				function blocklyLoaded(blockly) {
+					// Called once Blockly is fully loaded.
+					window.Blockly = blockly;
+				}
+			</script>
+		<div class="container">
+				 <div id="player-head">
+						<div class="player-name">Théo</div>
+						<div class="player-ip">192.168.0.12</div>
+				 </div>
+				<nav class="navbar navbar-static-top" role="navigation">
+					<ul class="nav nav-justified nav-pills">
+						<li id="nav-btn-scenarios" class="nav-btn" ><a href="#"><span class="glyphicon glyphicon-th-list"></span><span>Scénarios</span></a></li>
+						<li id="nav-btn-controls" class="nav-btn"><a href="#"><span class="glyphicon glyphicon-th"></span><span>Panneau de contrôle</span></a></li>
+						<li id="nav-btn-medias" class="nav-btn"><a href="#"><span class="glyphicon glyphicon-file"></span><span>Médias</span></a></li>
+						<li id="nav-btn-settings" class="nav-btn"><a href="#"><span class="glyphicon glyphicon-wrench"></span><span>Settings</span></a></li>
+					</ul>
+				</nav>
+				<div id="scenario-section" class="content-section">
+						<div id="scenario-controls">
+							<div class="row">
+								<div class="col-xs-2">
+									<button type="button" class="btn btn-default dropdown-toggle col-xs-12" data-toggle="dropdown" aria-expanded="false">
+									<span class="glyphicon glyphicon-th-list"></span>	sénario I <span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="#"><span class="glyphicon glyphicon-plus"></span>Nouveau scénario</a></li>
+										<li class="divider"></li>
+										<li><a href="#"><span class="glyphicon glyphicon-th-list"></span>scenario I</a></li>
+										<li><a href="#"><span class="glyphicon glyphicon-th-list"></span>scenario II</a></li>
+										<li><a href="#"><span class="glyphicon glyphicon-th-list"></span>scenario III</a></li>
+									</ul>
+								</div>
+								<div class="col-xs-1">
+									<button type="button" class="btn btn-default col-xs-12"><span class="glyphicon glyphicon-play" ></span>Play</button>
+								</div>
+								<div class="col-xs-1">
+									<button type="button" class="btn btn-default col-xs-12"><span class="glyphicon glyphicon-stop" ></span>Stop</button>
+								</div>
+								<div class="col-xs-6"></div>
+								<div class="col-xs-1">
+									<button type="button" class="btn btn-default col-xs-12"><span class="glyphicon glyphicon-floppy-disk" ></span>Save</button>
+								</div>
+								<div class="col-xs-1">
+									<button type="button" class="btn btn-default col-xs-12"><span class="glyphicon glyphicon-trash" ></span>Delete</button>
+								</div>
+							</div>
+						</div>
+						<div id="blockly-frame-container">
+							<iframe id="blockly-iframe" src="frame.html"></iframe>
+						</div>
+				</div>
+				<div id="controls-section" class="hidden content-section">
+						<div class="panel-group" id="controls-accordion" role="tablist" aria-multiselectable="false">
+							<div class="panel">
+								<div class="panel-heading" role="tab" id="headingOne">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#controls-accordion" href="#media-player" aria-expanded="true" aria-controls="media-player">
+											<span class="glyphicon glyphicon-film"></span><span>Media Player</span>
+										</a>
+									</h4>
+								</div>
+								<div id="media-player" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+									<div class="panel-body">
+										<div id="media-list">
+											<table class="table table-striped table-hover">
+														<thead>
+															<tr>
+																<th>type</th>
+																<th>name</th>
+																<th>length</th>
+																<th>size</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td><span class="glyphicon glyphicon-film"></span></td>
+																<td>biopic.mp4</td>
+																<td>55:02</td>
+																<td>773 Mo</td>
+															</tr>
+															<tr>
+																<td><span class="glyphicon glyphicon-music"></span></td>
+																<td>dubstep.mp3</td>
+																<td>2:35</td>
+																<td>5.35 Mo</td>
+															</tr>
+															<tr>
+																<td><span class="glyphicon glyphicon-film"></span></td>
+																<td>biopic.mp4</td>
+																<td>55:02</td>
+																<td>773 Mo</td>
+															</tr>
+															<tr>
+																<td><span class="glyphicon glyphicon-film"></span></td>
+																<td>biopic.mp4</td>
+																<td>55:02</td>
+																<td>773 Mo</td>
+															</tr>
+															<tr>
+																<td><span class="glyphicon glyphicon-film"></span></td>
+																<td>biopic.mp4</td>
+																<td>55:02</td>
+																<td>773 Mo</td>
+															</tr>
+															<td><span class="glyphicon glyphicon-music"></span></td>
+																<td>dubstep.mp3</td>
+																<td>2:35</td>
+																<td>5.35 Mo</td>
+															</tr>
+															<tr>
+																<td><span class="glyphicon glyphicon-picture"></span></td>
+																<td>charlybird.jpg</td>
+																<td>–</td>
+																<td>645 Ko</td>
+															</tr>
+															<td><span class="glyphicon glyphicon-music"></span></td>
+																<td>dubstep.mp3</td>
+																<td>2:35</td>
+																<td>5.35 Mo</td>
+															</tr>
+															<td><span class="glyphicon glyphicon-music"></span></td>
+																<td>dubstep.mp3</td>
+																<td>2:35</td>
+																<td>5.35 Mo</td>
+															</tr>
+															<tr>
+																<td><span class="glyphicon glyphicon-picture"></span></td>
+																<td>charlybird.jpg</td>
+																<td>–</td>
+																<td>645 Ko</td>
+															</tr>
+															<tr>
+																<td><span class="glyphicon glyphicon-picture"></span></td>
+																<td>charlybird.jpg</td>
+																<td>–</td>
+																<td>645 Ko</td>
+															</tr>
+															<tr>
+																<td><span class="glyphicon glyphicon-picture"></span></td>
+																<td>charlybird.jpg</td>
+																<td>–</td>
+																<td>645 Ko</td>
+															</tr>
+														</tbody>
+												</table>
+										</div>
+										<div id="player-controls">
+											<div class="col-xs-1">
+												<button type="button" class="btn btn-default col-xs-12"><span class="glyphicon glyphicon-play" ></span>Play</button>
+											</div>
+											<div class="col-xs-1">
+												<button type="button" class="btn btn-default col-xs-12"><span class="glyphicon glyphicon-stop" ></span>Stop</button>
+											</div>
+											<div class="col-xs-6"></div>
+											<div class="col-xs-1">
+												<button type="button" class="btn btn-default col-xs-12"><span class="glyphicon glyphicon-volume-off" ></span>Mute</button>
+											</div>
+											<div class="col-xs-1">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="panel">
+								<div class="panel-heading" role="tab" id="headingTwo">
+									<h4 class="panel-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#controls-accordion" href="#sensors" aria-expanded="false" aria-controls="sensors">
+											<span class="glyphicon glyphicon-tasks"></span><span>Sensors</span>
+										</a>
+									</h4>
+								</div>
+								<div id="sensors" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+									<div class="panel-body">
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+									</div>																		
+								</div>
+							</div>
+							<div class="panel">
+								<div class="panel-heading" role="tab" id="headingThree">
+									<h4 class="panel-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#controls-accordion" href="#network" aria-expanded="false" aria-controls="network">
+											<span class="glyphicon glyphicon-th-large"></span><span>Network</span>
+										</a>
+									</h4>
+								</div>
+								<div id="network" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+									<div class="panel-body">
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+									</div>
+								</div>
+							</div>
+						</div>
+				</div>
+				<div id="medias-section" class="hidden content-section">
+				</div>
+				<div id="settings-section" class="hidden content-section">
+				</div>
+			</div>
+  </body>
+</html>
