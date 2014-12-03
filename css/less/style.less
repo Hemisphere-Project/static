@@ -213,21 +213,6 @@ a:hover{
 		background-color: @g1;
 	}
 	
-	.panel-heading{
-		height:@controls-panel-heading-height;	
-		.ds(0,2px,3px,0,0.2);
-		position:relative;
-		
-		.ui-state-focus, .ui-state-hover{
-			.bs-none;	
-		}
-	}
-	.panel-body{
-		padding:0;
-		height:100%;
-		background-color: orange; 
-	}
-	
 	.panel{
 		
 		.bs-none;
@@ -236,6 +221,9 @@ a:hover{
 		margin-top:0;
 		
 		.panel-heading {
+			height:@controls-panel-heading-height;	
+			.ds(0,2px,3px,0,0.2);
+			position:relative;
 			color:@b1;
 			background-color: @g1-pp;
 			border-radius: 0;
@@ -257,14 +245,28 @@ a:hover{
 					}
 				}
 			}
-			
+		}
+		.panel-body{
+			padding:0;
+			height:100%;
+			background-color: orange; 
 		}
 		
-		#media-player{
-			#media-list{}
+	}
+	#media-player{
+			#media-list{
+				min-height: 100%;
+				height: auto;
+			  /* Negative indent footer by its height */
+			  	margin: 0 auto -34px;
+			  /* Pad bottom by footer height */
+			  	padding: 0 0 34px;
+			  	background-color: greenyellow;
+			
+			}
 			table {
-				width: 100%;
 				margin:0;	
+				height:100%
 			}
 			thead, tbody, tr, td, th { 
 				display: block;
@@ -278,6 +280,7 @@ a:hover{
 			}
 			thead th {
 				height: @player-controls-th-height;
+				
 			}
 			tbody {
 				height: @player-controls-tb-height;
@@ -390,7 +393,18 @@ a:hover{
 			}
 
 		}
-	}
+		#network{
+			#lonely-container{
+				display: -webkit-flex;
+				display: flex;
+				height: 300px;	
+			}
+			
+			#lonely{
+				margin: auto;
+				font-size: 4rem;
+			}
+		}
 	
 	
 }

@@ -25,7 +25,7 @@ function GUI(){
       header: ".panel-heading",
       collapsible: true,
       animate:{easing:"easeOutExpo",duration:300},
-      active:1
+      active:0
    });
   
   $( window ).resize(function() {

@@ -177,7 +177,7 @@
 														</tbody>
 												</table>
 										</div>
-										<div id="player-controls" class="pull-down">
+										<div id="player-controls">
 											<div class="col-xs-1">
 												<button type="button" class="btn btn-default col-xs-12"><span class="glyphicon glyphicon-play" ></span>Play</button>
 											</div>
@@ -223,7 +223,6 @@
 													<li><a href="#messages" data-toggle="tab">Arduino</a></li>
 												</ul>
 										</div>
-										
 										<div class="col-xs-11">
 												<!-- Tab panes -->
 												<div id="sensor-panes-container" class="tab-content">
@@ -245,7 +244,9 @@
 								</div>
 								<div id="network" >
 									<div class="panel-body">
-										<h3><span class="label label-default">No friends out there !</span></h3>
+										<div id="lonely-container">
+											<div id="lonely"><span class="label label-default">;( No friends out there !</span></div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -410,6 +411,41 @@
 						</div>-->
 				</div>
 				<div id="medias-section" class="content-section">
+						<div id="scenario-controls">
+							<div class="row">
+								<div class="col-xs-2">
+									<button type="button" class="btn btn-default dropdown-toggle col-xs-12" data-toggle="dropdown" aria-expanded="true">
+									<span class="glyphicon glyphicon-th-list"></span>	sénario I <span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="#"><span class="glyphicon glyphicon-plus"></span>Nouveau scénario</a></li>
+										<li class="divider"></li>
+										<li><a href="#"><span class="glyphicon glyphicon-th-list"></span>scenario I</a></li>
+										<li><a href="#"><span class="glyphicon glyphicon-th-list"></span>scenario II</a></li>
+										<li><a href="#"><span class="glyphicon glyphicon-th-list"></span>scenario III</a></li>
+									</ul>
+								</div>
+								<div class="col-xs-1">
+									<button type="button" class="btn btn-default col-xs-12"><span class="glyphicon glyphicon-play" ></span>Play</button>
+								</div>
+								<div class="col-xs-1">
+									<button type="button" class="btn btn-default col-xs-12"><span class="glyphicon glyphicon-stop" ></span>Stop</button>
+								</div>
+								<div class="col-xs-4"></div>
+								<div class="col-xs-1">
+									<button type="button" class="btn btn-default col-xs-12"><span class="glyphicon glyphicon-floppy-disk" ></span>Save</button>
+								</div>
+								<div class="col-xs-1">
+									<button type="button" class="btn btn-default col-xs-12"><span class="glyphicon glyphicon-trash" ></span>Delete</button>
+								</div>
+								<div class="col-xs-1">
+									<button type="button" class="btn btn-default col-xs-12 disabled"><span class="glyphicon glyphicon-open" ></span>Upload</button>
+								</div>
+								<div class="col-xs-1">
+									<button type="button" class="btn btn-default col-xs-12 disabled"><span class="glyphicon glyphicon-save" ></span>Download</button>
+								</div>
+							</div>
+						</div>
 				</div>
 				<div id="settings-section" class="content-section">
 				</div>
