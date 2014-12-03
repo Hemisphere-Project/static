@@ -1,4 +1,5 @@
 /* shades of grey */
+/*@g1 : #5A6568;*/
 /* b&w */
 /* color specific to a player */
 /*@id-color: #78BDE7;*/
@@ -19,6 +20,9 @@
 html,
 body {
   height: 100%;
+}
+*:focus {
+  outline: none;
 }
 body {
   background-color: #fff;
@@ -162,8 +166,16 @@ a:hover {
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
   position: relative;
 }
+#controls-section .panel-heading .ui-state-focus,
+#controls-section .panel-heading .ui-state-hover {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
 #controls-section .panel-body {
   padding: 0;
+  height: 100%;
+  background-color: orange;
 }
 #controls-section .panel {
   -webkit-box-shadow: none;
@@ -214,12 +226,15 @@ a:hover {
   height: 40px;
 }
 #controls-section .panel #media-player tbody {
-  height: 130px;
+  height: 230px;
   overflow-y: auto;
   background-color: #cbced3;
 }
 #controls-section .panel #media-player thead {
   background-color: #cbced3;
+  border-bottom-style: dashed;
+  border-bottom-width: 1px;
+  border-bottom-color: #878a8f;
 }
 #controls-section .panel #media-player tbody td,
 #controls-section .panel #media-player thead th {
@@ -235,8 +250,11 @@ a:hover {
 }
 #controls-section .panel #media-player #player-controls {
   width: 100%;
-  line-height: 20px;
-  background-color: #cbced3;
+  height: 34px;
+  background-color: #dcdfe4;
+  border-top-style: dashed;
+  border-top-width: 1px;
+  border-top-color: #878a8f;
 }
 #controls-section .panel #media-player #player-controls .btn {
   line-height: 20px;
@@ -247,5 +265,59 @@ a:hover {
 #controls-section .panel #media-player #player-controls .btn:hover {
   background-color: #878a8f;
   color: white;
+}
+#controls-section .panel #media-player #player-controls .progress-container {
+  padding: 0px 10px;
+  height: 32px;
+}
+#controls-section .panel #media-player #player-controls .progress-container .progress {
+  margin-top: 10px;
+  border-radius: 15px;
+  height: 15px;
+}
+#controls-section .panel #media-player #player-controls .progress-container .progress-bar {
+  background-color: #babd3c;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+#controls-section .panel #media-player #player-controls .slider-container {
+  padding: 0px 10px;
+}
+#controls-section .panel #media-player #player-controls .slider-container #volume_sli {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+#controls-section .panel #media-player #player-controls .slider-container .ui-slider-range {
+  background-color: #babd3c;
+}
+#controls-section .panel #media-player #player-controls .slider-container .ui-slider-handle {
+  background-color: #dcdf5e;
+}
+#controls-section .panel #sensors #sensor-left-menu {
+  height: 100%;
+}
+#controls-section .panel #sensors #sensor-left-menu ul {
+  height: 100%;
+  border-style: none;
+  padding: 0;
+}
+#controls-section .panel #sensors #sensor-left-menu li {
+  margin-bottom: 0;
+  height: 33.33333333%;
+  width: 100%;
+}
+#controls-section .panel #sensors #sensor-left-menu a,
+#controls-section .panel #sensors #sensor-left-menu a:hover,
+#controls-section .panel #sensors #sensor-left-menu a:focus {
+  border-style: none;
+  border-radius: 0;
+  height: 100%;
+  /*line-height:200%;*/
+  text-align: center;
+}
+#controls-section .panel #sensors #sensor-panes-container {
+  background-color: #cbced3;
+  height: 100%;
 }
 /*# sourceMappingURL=style.css.map */

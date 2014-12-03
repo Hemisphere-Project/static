@@ -12,6 +12,25 @@ function GUI(){
 	
 	this.addEventListeners();
 	
+	//initialize jquery-ui components
+	$("#volume_sli").slider({
+			min: 0,
+			max: 100,
+			value: 50,
+			orientation: "horizontal",
+			range: "min"
+	});
+	$( "#controls-accordion" ).accordion({
+      heightStyle: "fill",
+      header: ".panel-heading",
+      collapsible: true,
+      animate:{easing:"easeOutExpo",duration:300},
+      active:1
+   });
+  
+  $( window ).resize(function() {
+  		$( "#controls-accordion" ).accordion( "refresh" );
+  });
 
 	
 

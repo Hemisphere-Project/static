@@ -2,6 +2,7 @@
 /* shades of grey */
 
 @g1 : #43464B;
+/*@g1 : #5A6568;*/
 @g1-p : @g1 + #222;
 @g1-pp : @g1 + #444;
 @g1-ppp : @g1 + #888;
@@ -25,7 +26,7 @@
 @controls-panel-heading-height:50px;
 @player-controls-height:20px;
 @player-controls-th-height:40px;
-@player-controls-tb-height:130px;
+@player-controls-tb-height:230px;
 
 /* transistions */
 .ez-trans{
@@ -48,6 +49,9 @@
 
 html, body {
   height: 100%;
+}
+*:focus {
+    outline: none,
 }
 body {
   background-color: #fff;
@@ -213,9 +217,15 @@ a:hover{
 		height:@controls-panel-heading-height;	
 		.ds(0,2px,3px,0,0.2);
 		position:relative;
+		
+		.ui-state-focus, .ui-state-hover{
+			.bs-none;	
+		}
 	}
 	.panel-body{
 		padding:0;
+		height:100%;
+		background-color: orange; 
 	}
 	
 	.panel{
@@ -256,7 +266,10 @@ a:hover{
 				width: 100%;
 				margin:0;	
 			}
-			thead, tbody, tr, td, th { display: block;border-style: none; }
+			thead, tbody, tr, td, th { 
+				display: block;
+				border-style: none;
+			}
 			tr:after {
 				content: ' ';
 				display: block;
@@ -273,6 +286,9 @@ a:hover{
 			}
 			thead {
 				background-color: @g1-ppp;
+				border-bottom-style: dashed;
+				border-bottom-width:1px;
+				border-bottom-color: @g1-pp;
 			}
 			tbody td, thead th {
 				width: 25%;
@@ -293,8 +309,12 @@ a:hover{
 
 			#player-controls{
 				width:100%;
-				line-height:@player-controls-height;
-				background-color: @g1-ppp;
+				height:34px;
+				background-color: @g1-ppp+#111;
+				
+				border-top-style: dashed;
+				border-top-width:1px;
+				border-top-color: @g1-pp;
 				
 				.btn{
 					line-height:@player-controls-height;
@@ -306,8 +326,69 @@ a:hover{
 					background-color: @g1-pp;
 					color:@w;
 				}
+				.progress-container{
+					padding: 0px 10px;	
+					height: 32px;
+					.progress{
+						margin-top:	@player-controls-height/2;
+						border-radius:15px;
+						height: 15px;
+					}
+					.progress-bar{
+						background-color: @id-color-m;	
+						.bs-none;
+					}
+				}
+				
+				.slider-container{
+					padding: 0px 10px;
+					#volume_sli{
+						margin-top:	@player-controls-height/2;
+						margin-bottom: 0;
+					}
+					.ui-slider-range{
+						background-color: @id-color-m;
+					}
+					.ui-slider-handle{
+						background-color: @id-color;
+					}
+					
+				}
+
 			}
 			
+		}
+		#sensors{
+			
+			#sensor-left-menu{
+				height:100%;
+				ul{
+					height:100%;
+					border-style:none;
+					padding:0;
+				}
+				li{
+					margin-bottom:0;
+					height:100%/3;
+					width:100%;
+				}
+				a{
+					&,
+					&:hover,
+					&:focus{
+						border-style:none;
+						border-radius:0;
+						height:100%;
+						/*line-height:200%;*/
+						text-align:center;
+					}
+				}
+			}
+			#sensor-panes-container{
+				background-color:@g1-ppp;
+				height:100%;
+			}
+
 		}
 	}
 	
