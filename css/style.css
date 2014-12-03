@@ -99,24 +99,29 @@ a:hover {
 .glyphicon {
   margin-right: 4px;
 }
-#scenario-controls {
+#scenario-controls,
+#media-controls {
   line-height: 20px;
   background: #cbced3;
 }
-#scenario-controls .btn {
+#scenario-controls .btn,
+#media-controls .btn {
   line-height: 20px;
   border-radius: 0;
   border-style: none;
   background-color: #878a8f;
 }
-#scenario-controls .btn:hover {
+#scenario-controls .btn:hover,
+#media-controls .btn:hover {
   background-color: #cbced3;
 }
-#scenario-controls .caret {
+#scenario-controls .caret,
+#media-controls .caret {
   position: absolute;
   right: 10px;
 }
-#scenario-controls .dropdown-menu {
+#scenario-controls .dropdown-menu,
+#media-controls .dropdown-menu {
   border-radius: 0;
   border-style: none;
   width: 100%;
@@ -126,13 +131,16 @@ a:hover {
   -moz-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
 }
-#scenario-controls .dropdown-menu li a {
+#scenario-controls .dropdown-menu li a,
+#media-controls .dropdown-menu li a {
   background-color: #cbced3;
 }
-#scenario-controls .dropdown-menu li a:hover {
+#scenario-controls .dropdown-menu li a:hover,
+#media-controls .dropdown-menu li a:hover {
   background-color: #878a8f;
 }
-#scenario-controls .dropdown-menu li .divider {
+#scenario-controls .dropdown-menu li .divider,
+#media-controls .dropdown-menu li .divider {
   margin: 0px;
   background-color: #878a8f;
 }
@@ -150,6 +158,21 @@ a:hover {
 #blockly-iframe {
   width: 100%;
   height: 100%;
+}
+.progress-container {
+  padding: 0px 10px;
+  height: 32px;
+}
+.progress {
+  margin-top: 10px;
+  border-radius: 15px;
+  height: 15px;
+}
+.progress-bar {
+  background-color: #babd3c;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 #controls-section {
   height: calc(100% -  160px);
@@ -267,21 +290,6 @@ a:hover {
   background-color: #878a8f;
   color: white;
 }
-#controls-section #media-player #player-controls .progress-container {
-  padding: 0px 10px;
-  height: 32px;
-}
-#controls-section #media-player #player-controls .progress-container .progress {
-  margin-top: 10px;
-  border-radius: 15px;
-  height: 15px;
-}
-#controls-section #media-player #player-controls .progress-container .progress-bar {
-  background-color: #babd3c;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
 #controls-section #media-player #player-controls .slider-container {
   padding: 0px 10px;
 }
@@ -329,5 +337,66 @@ a:hover {
 #controls-section #network #lonely {
   margin: auto;
   font-size: 4rem;
+}
+#medias-section {
+  background-color: #43464b;
+  /*height:100%;*/
+}
+#medias-section #media-controls {
+  -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+#medias-section #media-list {
+  min-height: 100%;
+  height: auto;
+}
+#medias-section table {
+  margin: 0;
+  height: 100%;
+}
+#medias-section thead,
+#medias-section tbody,
+#medias-section tr,
+#medias-section td,
+#medias-section th {
+  display: block;
+  border-style: none;
+}
+#medias-section tr:after {
+  content: ' ';
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+#medias-section thead th {
+  height: 33px;
+}
+#medias-section tbody {
+  overflow-y: auto;
+  background-color: #cbced3;
+  height: 300px;
+}
+#medias-section thead {
+  background-color: #cbced3;
+  border-bottom-style: dashed;
+  border-bottom-width: 1px;
+  border-bottom-color: #878a8f;
+}
+#medias-section tbody td,
+#medias-section thead th {
+  width: 25%;
+  float: left;
+}
+#medias-section .table-striped > tbody > tr:nth-child(odd) {
+  background-color: #dcdfe4;
+}
+#medias-section .table-hover > tbody > tr:hover {
+  background-color: #878a8f;
+  color: white;
+}
+#medias-section .media-preview {
+  height: 60px;
 }
 /*# sourceMappingURL=style.css.map */
