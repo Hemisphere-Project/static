@@ -18,11 +18,12 @@
 
 /* fonts */
 @lato: "Lato", Helvetica, Arial, sans-serif;
+@navbar-fs: 18px;
 
 /* variable heights */
 @player-head-height:100px;
-@navbar-height:40px;
-@scenario-controls-height:20px;
+@navbar-height:60px;
+@toolbar-height:35px;
 @controls-panel-heading-height:50px;
 @player-controls-height:20px;
 @player-controls-th-height:40px;
@@ -47,6 +48,7 @@
 	box-shadow:	none;		
 }
 
+/* global */
 html, body {
   height: 100%;
 }
@@ -80,6 +82,12 @@ a:hover{
 	padding-right:0px;	
 }
 
+.glyphicon{
+	margin-right:4px;	
+}
+
+/* header */
+
 #player-head{
 	height: @player-head-height;
 	background-color: @g1-p;
@@ -102,24 +110,26 @@ a:hover{
 }
 
 
-
+/* nav bar */
 
 .navbar{
 	position:fixed;
 	top:@player-head-height;
-	min-height:@navbar-height;
+	/*min-height:@navbar-height;*/
 	margin-bottom: 0px;
 	border-style: none;	
 	.ds(0,2px,3px,0,0.2);
 	
 	li,a{
-		font-size:18px;
-		line-height: @navbar-height;
+		font-size:@navbar-fs;
+		line-height: 1;
 		.ez-trans;
 
 	}
 	.nav-pills {
+			
 		  > li {
+		  	
 			&.active > a {
 			  &,
 			  &:hover,
@@ -129,6 +139,8 @@ a:hover{
 			  }
 			}
 			> a{
+				height:@navbar-height;
+				padding-top:@navbar-height/2 - @navbar-fs/2;
 				border-style: none;
 				border-radius: 0;	
 			}
@@ -137,19 +149,17 @@ a:hover{
 
 }
 
+/* tool bar */
 
-.glyphicon{
-	margin-right:4px;	
-}
-
-
-#scenario-controls, #media-controls {
-	line-height:@scenario-controls-height;
+.toolbar {
+	/*line-height:@toolbar-height;*/
 	background: @g1-ppp;
-	
+	.row{
+		margin:0;	
+	}
 	
 	.btn{
-		line-height:@scenario-controls-height;
+		height:@toolbar-height;
 		border-radius: 0;
 		border-style: none;
 		background-color: @g1-pp;
@@ -160,6 +170,7 @@ a:hover{
 	.caret{
 		position:absolute;
 		right:10px;
+		top:@toolbar-height/2;
 	}
 	.dropdown-menu{
 		border-radius: 0;
@@ -185,23 +196,7 @@ a:hover{
 
 }
 
-.content-section{
-	background-color:pink;
-	margin-top:@player-head-height + @navbar-height + @scenario-controls-height;
-}
-
-#scenario-section{
-	overflow:hidden;
-	height: calc(~"100% - "@player-head-height + @navbar-height + @scenario-controls-height);
-}
-
-#blockly-frame-container{
-	height: calc(~"100% - "@scenario-controls-height);
-}
-#blockly-iframe{
-	width:100%;
-	height:100%;
-}
+/* progress-bar */
 
 .progress-container{
 	padding: 0px 10px;	
@@ -218,9 +213,91 @@ a:hover{
 	.bs-none;
 }
 
+
+/* media list */
+
+.media-list{
+	table {
+		margin:0;	
+		height:100%;
+	}
+	thead, tbody, tr, td, th { 
+		display: block;
+		border-style: none;
+	}
+	tr:after {
+		content: ' ';
+		display: block;
+		visibility: hidden;
+		clear: both;
+	}
+	thead th {
+		height:@player-controls-th-height;
+		
+	}
+	tbody {
+		height: calc(~"100% - "@player-controls-th-height);
+		overflow-y: auto;
+		background-color: @g1-ppp;
+	}
+	thead {
+		background-color: @g1-ppp;
+		border-bottom-style: dashed;
+		border-bottom-width:1px;
+		border-bottom-color: @g1-pp;
+	}
+	tbody td, thead th {
+		width: 25%;
+		float: left;
+	}
+	.table-striped {
+	  > tbody > tr:nth-child(odd) {
+		background-color: @g1-ppp+#111;
+	  }
+	  > tbody > tr:nth-child(even) {
+		background-color: @g1-ppp;
+	  }
+	  > tbody > tr:last-child {
+		.ds(0,2px,3px,0,0.2);
+	  }
+	}
+	
+	.table-hover {
+	  > tbody > tr:hover {
+		background-color: @g1-pp;
+		color:@w;
+	  }
+	}
+}
+
+
+/* content section */
+
+.content-section{
+	background-color:pink;
+	margin-top:@player-head-height + @navbar-height ;
+	height:calc(~"100% - "@player-head-height + @navbar-height);
+}
+
+#scenario-section{
+	overflow:hidden;
+	/*height: calc(~"100% - "@player-head-height + @navbar-height + @toolbar-height);*/
+}
+
+#blockly-frame-container{
+	height: calc(~"100% - "@toolbar-height);
+}
+#blockly-iframe{
+	width:100%;
+	height:100%;
+}
+
+
+
+
 #controls-section{
 	
-	height:calc(~"100% - "@player-head-height + @navbar-height + @scenario-controls-height);
+	/*height:calc(~"100% - "@player-head-height + @navbar-height + @toolbar-height);*/
 	
 	.panel-group{
 		height: 100%;
@@ -269,61 +346,64 @@ a:hover{
 		
 	}
 	#media-player{
-			#media-list{
-				min-height: 100%;
-				height: auto;
-			  /* Negative indent footer by its height */
-			  	margin: 0 auto -34px;
-			  /* Pad bottom by footer height */
-			  	padding: 0 0 34px;
-			  	background-color: greenyellow;
 			
-			}
-			table {
-				margin:0;	
-				height:100%
-			}
-			thead, tbody, tr, td, th { 
-				display: block;
-				border-style: none;
-			}
-			tr:after {
-				content: ' ';
-				display: block;
-				visibility: hidden;
-				clear: both;
-			}
-			thead th {
-				height: @player-controls-th-height;
+			overflow:hidden !important;
+		
+			.media-list{
+			  	height:calc(~"100% - 34px");
+/*				table {
+					margin:0;	
+					height:100%;
+				}
+				thead, tbody, tr, td, th { 
+					display: block;
+					border-style: none;
+				}
+				tr:after {
+					content: ' ';
+					display: block;
+					visibility: hidden;
+					clear: both;
+				}
+				thead th {
+					height:@player-controls-th-height;
+					
+				}
+				tbody {
+					height: calc(~"100% - "@player-controls-th-height);
+					overflow-y: auto;
+					background-color: @g1-ppp;
+				}
+				thead {
+					background-color: @g1-ppp;
+					border-bottom-style: dashed;
+					border-bottom-width:1px;
+					border-bottom-color: @g1-pp;
+				}
+				tbody td, thead th {
+					width: 25%;
+					float: left;
+				}
+				.table-striped {
+				  > tbody > tr:nth-child(odd) {
+					background-color: @g1-ppp+#111;
+				  }
+				  > tbody > tr:nth-child(even) {
+					background-color: @g1-ppp;
+				  }
+				  > tbody > tr:last-child {
+					.ds(0,2px,3px,0,0.2);
+				  }
+				}
 				
+				.table-hover {
+				  > tbody > tr:hover {
+					background-color: @g1-pp;
+					color:@w;
+				  }
+				}*/
 			}
-			tbody {
-				height: @player-controls-tb-height;
-				overflow-y: auto;
-				background-color: @g1-ppp;
-			}
-			thead {
-				background-color: @g1-ppp;
-				border-bottom-style: dashed;
-				border-bottom-width:1px;
-				border-bottom-color: @g1-pp;
-			}
-			tbody td, thead th {
-				width: 25%;
-				float: left;
-			}
-			.table-striped {
-			  > tbody > tr:nth-child(odd) {
-				background-color: @g1-ppp+#111;
-			  }
-			}
-			
-			.table-hover {
-			  > tbody > tr:hover {
-				background-color: @g1-pp;
-				color:@w;
-			  }
-			}
+
 
 			#player-controls{
 				width:100%;
@@ -416,7 +496,13 @@ a:hover{
 		.ds(0,2px,3px,0,0.2);
 		position:relative;
 	}
-	#media-list{
+	.media-preview{
+		height:60px;	
+	}
+	.media-list{
+		height:calc(~"100% - 60px");
+	}
+	/*#media-list{
 		min-height: 100%;
 		height: auto;
 	}
@@ -468,7 +554,7 @@ a:hover{
 
 	.media-preview{
 		height:60px;	
-	}
+	}*/
 }
 #settings-section{
 	

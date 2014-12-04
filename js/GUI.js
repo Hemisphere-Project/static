@@ -8,7 +8,7 @@ function GUI(){
 	};
 	
 	// initialize the current state
-	this.changeState(this.states.controls);
+	this.changeState(this.states.medias);
 	
 	this.addEventListeners();
 	
@@ -54,6 +54,8 @@ GUI.prototype.addEventListeners = function(){
 				break;
 			case "nav-btn-controls" : 
 				scope.changeState(scope.states.controls);
+				// only necessary when first load controls
+				$( "#controls-accordion" ).accordion( "refresh" );
 				break;
 			case "nav-btn-medias" : 
 				scope.changeState(scope.states.medias);
